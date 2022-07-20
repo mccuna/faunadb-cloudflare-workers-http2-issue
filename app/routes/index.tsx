@@ -1,3 +1,12 @@
+import { LoaderFunction } from "@remix-run/cloudflare";
+import { Client } from "faunadb";
+
+export const loader: LoaderFunction = () => {
+  const client = new Client();
+
+  return new Response(null, { status: 200 });
+};
+
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
